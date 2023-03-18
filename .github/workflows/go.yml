@@ -26,3 +26,12 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+  notify:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+    - name: notify to Discord
+    env:
+      SECRET_ENV: ${{ secrets.WEBHOOK_URL }}
+      run: curl $SECRET_ENV -i -H "Content-Type:application/json" -d '{\"content\":\"プルリクエストが来てるみたいだね！\"}'
+      
