@@ -33,5 +33,5 @@ jobs:
     - name: notify to Discord
       env:
         SECRET_ENV: ${{ secrets.WEBHOOK_URL }}
-      run: curl $SECRET_ENV -i -H "Content-Type:application/json" -d '{\"content\":\"プルリクエストが来てるみたいだね！\"}'
+      run: curl $SECRET_ENV -i -H "Content-Type:application/json" -d '{"content":"プルリクエストが来てるみたいだね！"}'
       
