@@ -22,6 +22,7 @@ func TestAdd(t *testing.T) {
 		t.Run(v.identifier, v.Testing)
 	}
 }
+
 func (c TestCase) Testing(t *testing.T) { //テストを行う関数
 	out := Add(c.args)       //関数の出力値を取得
 	success := out == c.want //テストは成功か？
